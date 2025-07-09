@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能庭院植物养护系统</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        .dashboard {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        
+        .header {
+            grid-column: 1 / -1;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .sensor-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .sensor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .sensor-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .sensor-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .sensor-unit {
+            font-size: 1rem;
+            color: #777;
+        }
+        
+        .sensor-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .status-normal {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .chart-container {
+            grid-column: 1 / -1;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: 300px;
+        }
+        
+        .controls {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        
+        .control-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .control-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .control-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>🌿 智能庭院植物养护系统</h1>
+            <p id="last-update">最后更新: 正在连接...</p >
+        </div>
+        
+        <!-- 空气温度卡片 -->
+        <div class="sensor-card">
+            <div class="sensor-icon">🌡️</div>
+            <h2>空气温度</h2>
+            <div class="sensor-value" id="air-temp">--</div>
+            <span class="sensor-unit">°C</span>
+            <div class="sensor-status status-normal" id="air-temp-status">--</div>
+        </div>
+        
+        <!-- 空气湿度卡片 -->
+        <div class="sensor-card">
+            <div class="sensor-icon">💧</div>
+            <h2>空气湿度</h2>
+            <div class="sensor-value" id="air-humidity">--</div>
+            <span class="sensor-unit">%</span>
+            <div class="sensor-status status-normal" id="air-humidity-status">--</div>
+        </div>
+        
+        <!-- 土壤湿度卡片 -->
+        <div class="sensor-card">
+            <div class="sensor-icon">🌱</div>
+            <h2>土壤湿度</h2>
+            <div class="sensor-value" id="soil-humidity">--</div>
+            <span class="sensor-unit">%</span>
+            <div class="sensor-status status-normal" id="soil-humidity-status">--</div>
+        </div>
+        
+        <!-- 图表区域 -->
+        <div class="chart-container">
+            <h2>环境数据趋势</h2>
+            <canvas id="env-chart"></canvas>
+        </div>
+        
+        <!-- 控制按钮 -->
+        <div class="controls">
+            <button class="control-btn" id="water-btn">💦 手动浇水</button>
+            <button class="control-btn" id="settings-btn">⚙️ 系统设置</button>
+        </div>
+    </
