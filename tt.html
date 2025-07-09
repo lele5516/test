@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4580860_aw80qhac5zs.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .fr-bar {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 30px;
+        background: #000;
+        height: 100%;
+        z-index: 999;
+        color: #fff;
+    }
+
+    body {
+        background-color: #F5F5F5;
+    }
+
+    #wrap {
+        width: 100%;
+    }
+
+    .head {
+        width: 100%;
+    }
+
+    .main {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .head-nav {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-left a {
+        color: #000;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    .nav-left {
+        display: flex;
+    }
+
+    .nav-right {
+        display: flex;
+    }
+
+    .nav-right div {
+        margin-right: 15px;
+    }
+
+    .head-center {
+        width: 100%;
+        height: 150px;
+        background-color: #fff;
+        border-bottom: 2px solid #f69;
+    }
+
+    .head-center .logo {
+        width: 170px;
+        height: 110px;
+        
+    }
+
+    .head-center .logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .center {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .center .ipt {
+        position: relative;
+    }
+
+    .center .ipt .fang {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+
+    }
+
+    .center .ipt input {
+        width: 600px;
+        height: 40px;
+        border: 2px solid #f69;
+        
+    }
+
+    .center .ipt input::-webkit-input-placeholder {
+        padding-left: 30px;
+    }
+
+    .center .ipt button {
+        width: 100px;
+        height: 42px;
+        background-color: #f69;
+        color: #fff;
+        border: 2px solid #f69;
+        position: absolute;
+        top: 0;
+        left: 502px;
+        cursor: pointer;
+    }
+
+    .center .ipt .ipt-content span {
+        display: inline-block;
+        padding-right: 5px;
+        font-size: 12px;
+        color: #555555;
+    }
+
+    .center .cart {
+        width: 190px;
+        height: 35px;
+        border: 1px solid #e5e5e5;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .head-center .nav-bottom {
+        display: flex;
+    }
+
+    .head-center .nav-bottom .all-cate {
+        width: 190px;
+        height: 36px;
+        color: #fff;
+        background-color: #ed3577;
+        text-align: center;
+        line-height: 36px;
+    }
+
+    .head-center .nav-bottom .all-nav ul {
+        display: flex;
+    }
+
+    .head-center .nav-bottom .all-nav ul li {
+        width: 106px;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        color: #555555;
+    }
+
+    .contents {
+        width: 100%;
+    }
+
+    .contents .beimg {
+        width: 100%;
+        height: 420px;
+    }
+
+    .contents .beimg img {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+
+    }
+
+    .contents .content-li {
+        position: relative;
+    }
+
+    .contents .content-li .allBuy {
+        width: 190px;
+        height: 424px;
+        background-color: #f69;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+    }
+
+    .contents .content-li .allBuy div {
+        width: 100%;
+        height: 84px;
+        border-bottom: 1px solid #fff;
+    }
+
+    .contents .content-li .freeMore {
+        width: 230px;
+        height: 400px;
+        background-color: rgba(234, 234, 234, 0.4);
+        position: absolute;
+        bottom: 14px;
+        right: 0;
+
+    }
+
+    .contents .hot-brand {
+        width: 100%;
+        font-size: 20px;
+
+    }
+
+    .contents .hot-brand .title {
+        height: 26px;
+        border-left: 4px solid #84af9b;
+        margin: 25px 0 10px 0;
+    }
+
+    .contents .hot-brand .title strong {
+        padding: 0px 10px 0px 5px;
+        color: #666;
+    }
+
+    .contents .hot-brand .title span {
+        font-weight: 100;
+        color: #517966;
+    }
+
+    .contents .hot-brand .hot-img {
+        display: flex;
+        height: 400px;
+    }
+
+    .contents .hot-brand .hot-img .img-con {
+        flex: 1;
+        position: relative;
+    }
+
+    .contents .hot-brand .hot-img .img-con img {
+        height: 294px;
+    }
+
+    .contents .hot-brand .hot-img .img-con .con-logo {
+        width: 109px;
+        height: 93px;
+        top: -52px;
+        left: 70px;
+        background: url(http://www.zhubaojie.com/mallstore/templates/default/statics/image/brand_div.png);
+        position: relative;
+        z-index: 9;
+        text-align: center;
+    }
+
+    .contents .hot-brand .hot-img .img-con .con-logo img {
+        width: 70px;
+        height: 30px;
+        position: absolute;
+        top: 31px;
+        left: 17px;
+    }
+
+    .contents .hot-brand .hot-img .img-con .con-bottom {
+        width: 240px;
+        background-color: #fff;
+        padding-top: 46px;
+        padding-bottom: 20px;
+        text-align: center;
+        border-left: 1px solid #dbdbdb;
+        border-bottom: 1px solid #dbdbdb;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .contents .hot-brand .hot-img .img-con .con-bottom .look-more {
+        width: 120px;
+        height: 33px;
+        color: #fff;
+        font-size: 12px;
+        background-color: #333333;
+        margin: auto;
+        margin-top: 12px;
+        line-height: 33px;
+        border-radius: 20px;
+    }
+
+    .selection {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .selection .title {
+        height: 26px;
+        border-left: 4px solid #84af9b;
+        margin: 25px 0 10px 0;
+    }
+
+    .selection .title strong {
+        color: #666;
+        padding: 0 10px 0 5px;
+    }
+
+    .selection .title span {
+        font-weight: 100;
+        color: #008ea6;
+    }
+
+    .selection .selCon {
+        width: 100%;
+        height: 410px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .selection .selCon .selGoods:nth-child(3) .sel2 {
+        margin-top: 5px;
+    }
+
+    .recommend {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .recommend .title {
+        height: 26px;
+        margin: 25px 0 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .recommend .title .tit1 {
+        border-left: 4px solid #e1453f;
+    }
+
+    .recommend .title .tit1 strong {
+        color: #666;
+        padding: 0 10px 0 5px;
+    }
+
+    .recommend .title .tit1 span {
+        font-weight: 100;
+        color: #e1453f;
+    }
+
+    .recommend .recHot {
+        width: 100%;
+        height: 280px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .recommend .recHot .recGoods {
+        width: 198px;
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+
+    .recommend .recHot .recGoods img {
+        width: 196px;
+        height: 196px;
+    }
+
+    .recommend .recHot .recGoods p {
+        padding: 6px 18px;
+        color: #2f2f2f;
+        height: 32px;
+        font-size: 12px;
+        overflow: hidden;
+    }
+
+    .recommend .recHot .recGoods .price {
+        padding: 0 18px;
+        color: #e1453f;
+    }
+
+    .recommend .recHot .recGoods:hover {
+        border: 1px solid #e1453f;
+        z-index: 99;
+    }
+
+    .cenImg {
+        width: 100%;
+        height: 100px;
+        margin-top: 26px;
+    }
+
+    .cenImg img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .onefloor {
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .onefloor .title{
+        height: 26px;
+        margin: 25px 0 10px 0;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .onefloor .title .tit1{
+        font-size: 20px;
+    }
+
+    .onefloor .title .tit1 strong{
+        color: #e1453f;
+        padding: 0 10px 0 5px;
+    }
+
+    .onefloor .title .tit1 span{
+        font-weight: 100;
+        color: #88a600;
+
+    }
+
+    .onefloor .title .directory a{
+        width: 69px;
+        height: 20px;
+        color: #000;
+        text-decoration: none;
+        margin-right: 2px;
+        border-right: 2px solid #939293 ;
+        
+
+    }
+
+    .onefloor .title .directory{
+        display: flex ;
+    }
+
+    .onefloor .broGold {
+        width: 100%;
+        height: 546px;
+        box-sizing: border-box;
+        display: flex;
+        
+    }
+
+    .onefloor .broGold .broGolds{
+        position: relative;
+    }
+
+    .onefloor .broGold .broGolds .one{
+        margin-top: 10px;
+    }
+
+    .onefloor .broGold .broGoldss {
+        display: flex;
+        width: 1200px;
+        height: 534px;
+    }
+    
+    .onefloor .broGold .broGoldss ul{
+        float: left;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        
+    }
+
+    .onefloor .broGold .broGoldss ul li{
+        background-color: white;
+    }
+
+    .onefloor .broGold .broGoldss ul li:hover{
+        cursor: pointer;
+    }
+
+    .onefloor .broGold .broGoldss p {
+        padding: 5px 18px;
+        color: #2f2f2f;
+        height: 26px;
+        font-size: 10px;
+        overflow: hidden;
+    }
+
+    .onefloor .broGold .broGoldss .price {
+        padding: 0 18px;
+        color: #e1453f;
+    }
+
+    .onefloor .broGold .broGoldss ul img{
+        width: 235px;
+        height: 212px;
+        margin: auto;
+    }
+
+    
+
+
+</style>
+<body>
+    <div id="wrap">
+        <!--1. 头部 -->
+        <div class="head">
+            <div class="main">
+                <!-- 最顶部的登陆导航 -->
+                <div class="head-nav">
+                    <div class="nav-left">
+                        <div>宝，欢迎来珠宝街</div>
+                        <a href="#">请登录</a>
+                        <a href="#">免费注册</a>
+                    </div>
+                    <div class="nav-right">
+                        <div>我的宝贝<i class="iconfont icon-xiangxiajiantou"></i></div>
+                        <div>我关注的品牌<i class="iconfont icon-xiangxiajiantou"></i></div>
+                        <div>帮助中心<i class="iconfont icon-xiangxiajiantou"></i></div>
+                        <div>商家支持<i class="iconfont icon-xiangxiajiantou"></i></div>
+                    </div>
+                </div>
+            </div>
+            <!-- logo和搜索部分 -->
+            <div class="head-center">
+                <div class="main">
+                    <div class="center">
+                        <div class="logo">
+                            <img src="	http://www.zhubaojie.com/mallstore/templates/default/images/new/logo.png" alt="">
+                        </div>
+                        <div class="ipt">
+                            <i class="iconfont icon-sousuo fang"></i>
+                            <input type="text" placeholder="请输入要搜索的关键字">
+                            <button>搜索</button>
+                            <div class="ipt-content">
+                                <span>黄金</span>
+                                <span>黄金项链</span>
+                                <span>钻石戒指</span>
+                                <span>珍珠</span>
+                                <span>玉手镯</span>
+                                <span>手链</span>
+                            </div>
+                        </div>
+                        <div class="cart">
+                            <i class="iconfont icon-gouwuche"></i>
+                            我的购物车
+                            <i class="iconfont icon-xiaoxishuzijiaobiao"></i>
+                        </div>
+                    </div>
+                    <div class="nav-bottom">
+                        <div class="all-cate">
+                            <i class="iconfont icon-fenlei"></i>
+                            所有商品分类
+                        </div>
+                        <div class="all-nav">
+                            <ul>
+                                <li>首页</li>
+                                <li>黄金珠宝</li>
+                                <li>精选饰品</li>
+                                <li>珠宝基地</li>
+                                <li>夺宝岛</li>
+                                <li>私人定制</li>
+                                <li>保税区</li>
+                                <li>社区</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 2.主题内容 -->
+        <div class="contents">
+            <!-- 背景图片 -->
+            <div class="beimg">
+                <img src="http://www.zhubaojie.com/mallstore/templates/default/home/special/202006zt_dongli//images/bg_02.jpg"
+                    alt="">
+
+                <div class="main">
+
+                    <div class="content-li">
+                        <div class="allBuy">
+                            <div class="da"></div>
+                            <div class="huang"></div>
+                            <div class="shi"></div>
+                            <div class="qi"></div>
+                            <div class="zhong"></div>
+                        </div>
+                        <div class="freeMore">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="main">
+                <!-- 热门品牌 -->
+                <div class="hot-brand">
+                    <div class="title">
+                        <strong>热门品牌</strong>
+                        <span>HOT BRAND</span>
+                    </div>
+                    <div class="hot-img">
+                        <div class="img-con">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06098498022220935.jpg" alt="">
+                            <div class="con-logo">
+                                <img src="http://www.zhubaojie.com/mallcache/upload/shop/brand/06098499223003860_sm.jpg"
+                                    alt="">
+                            </div>
+                            <div class="con-bottom">
+                                <div style="font-size: 16px; color: #333333;">银奥旗舰店</div>
+                                <div style="font-size: 14px; color: #666666;">品位不凡，独特出众</div>
+                            </div>
+                        </div>
+                        <div class="img-con">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06098498022220935.jpg" alt="">
+                            <div class="con-logo">
+                                <img src="http://www.zhubaojie.com/mallcache/upload/shop/brand/06098499223003860_sm.jpg"
+                                    alt="">
+                            </div>
+                            <div class="con-bottom">
+                                <div style="font-size: 16px; color: #333333;">银奥旗舰店</div>
+                                <div style="font-size: 14px; color: #666666;">品位不凡，独特出众</div>
+                            </div>
+                        </div>
+                        <div class="img-con">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06098498022220935.jpg" alt="">
+                            <div class="con-logo">
+                                <img src="http://www.zhubaojie.com/mallcache/upload/shop/brand/06098499223003860_sm.jpg"
+                                    alt="">
+                            </div>
+                            <div class="con-bottom">
+                                <div style="font-size: 16px; color: #333333;">银奥旗舰店</div>
+                                <div style="font-size: 14px; color: #666666;">品位不凡，独特出众</div>
+                            </div>
+                        </div>
+                        <div class="img-con">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06098498022220935.jpg" alt="">
+                            <div class="con-logo">
+                                <img src="http://www.zhubaojie.com/mallcache/upload/shop/brand/06098499223003860_sm.jpg"
+                                    alt="">
+                            </div>
+                            <div class="con-bottom">
+                                <div style="font-size: 16px; color: #333333;">银奥旗舰店</div>
+                                <div style="font-size: 14px; color: #666666;">品位不凡，独特出众</div>
+                            </div>
+                        </div>
+                        <div class="img-con">
+                            <img src="http://www.zhubaojie.com/mallstore/templates/default/statics/image/264.jpg"
+                                alt="">
+                            <div class="con-bottom">
+                                <div class="look-more">查看更多></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 精选好货 -->
+                <div class="selection">
+                    <div class="title">
+                        <strong>精选好货</strong>
+                        <span>THE SELECTION OF GOOD</span>
+                    </div>
+                    <div class="selCon">
+                        <div class="selGoods">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06476216148920623.jpg" alt="">
+                        </div>
+                        <div class="selGoods">
+                            <div class="sel1">
+                                <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06476218722840691.jpg"
+                                    alt="">
+                            </div>
+                            <div class="sel2">
+                                <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06476223481098712.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="selGoods">
+                            <div class="sel1">
+                                <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06476224540835409.jpg"
+                                    alt="">
+                            </div>
+                            <div class="sel2">
+                                <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06476223573098492.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="selCon">
+                            <div class="selGoods">
+                                <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/05369488806318563.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 爆款推荐 -->
+                <div class="recommend">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>爆款推荐</strong>
+                            <span>HOT STYLE OF RECOMMEND</span>
+                        </div>
+                        <div class="tit2">
+                            <i class="iconfont icon-reset"></i>
+                            换一换
+                        </div>
+                    </div>
+                    <div class="recHot">
+                        <div class="recGoods">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1262/1262_05069432657726814_240.jpg"
+                                alt="">
+                            <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                        </div>
+                        <div class="recGoods">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1262/1262_05069432657726814_240.jpg"
+                                alt="">
+                            <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                        </div>
+                        <div class="recGoods">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1262/1262_05069432657726814_240.jpg"
+                                alt="">
+                            <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                        </div>
+                        <div class="recGoods">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1262/1262_05069432657726814_240.jpg"
+                                alt="">
+                            <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                        </div>
+                        <div class="recGoods">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1262/1262_05069432657726814_240.jpg"
+                                alt="">
+                            <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                        </div>
+                        <div class="recGoods">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1262/1262_05069432657726814_240.jpg"
+                                alt="">
+                            <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图片 -->
+                <div class="Img">
+                    <a href="https://www.baidu.com"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/advs/06505691676242679.jpg" alt="" >
+                    </a>
+                </div>
+                <!-- 1F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>1F 黄金铂金</strong>
+                            <span>GOLD & PLATINUM</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">黄金</a>
+                            <a href="#">合金/镀银/镀金</a>
+                            <a href="#">K金</a>
+                            <a href="#">白银</a>
+                            <a href="#">白金</a>
+                            <a href="#">金银投资</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 2F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>2F投资金银</strong>
+                            <span>INVESTMENT IN GOLD AND SILVERM</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">黄金</a>
+                            <a href="#">K金</a>
+                            <a href="#">珍珠</a>
+                            <a href="#">白金</a>
+                            <a href="#">金银投资</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 3F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>3F 钻石</strong>
+                            <span>DIAMOND</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">礼包</a>
+                            <a href="#">钻石项链</a>
+                            <a href="#">钻石戒指</a>
+                            <a href="#">钻石吊坠</a>
+                            <a href="#">钻石手镯</a>
+                            <a href="#">钻石手链</a>
+                            <a href="#">钻石耳饰</a>
+                            <a href="#">裸钻</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 4F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>4F 银饰</strong>
+                            <span>SILVERWORK</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">白银手镯</a>
+                            <a href="#">白银戒指</a>
+                            <a href="#">白银项链</a>
+                            <a href="#">白银吊坠</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 5F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>5F 彩色宝石</strong>
+                            <span>COLOR JEWELRY</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">宝石吊坠</a>
+                            <a href="#">宝石戒指</a>
+                            <a href="#">宝石项链</a>
+                            <a href="#">头饰/耳饰</a>
+                            <a href="#">红宝石</a>
+                            <a href="#">蓝宝石</a>
+                            <a href="#">祖母绿</a>
+                            <a href="#">猫眼石</a>
+                            <a href="#">砗磲</a>
+                            <a href="#">萤石/虎晴/孔雀/绿松/石榴</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 6F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>6F 翡翠玉石</strong>
+                            <span>JADEITE JADE</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">翡翠手镯</a>
+                            <a href="#">翡翠吊坠</a>
+                            <a href="#">翡翠戒指</a>
+                            <a href="#">翡翠项链</a>
+                            <a href="#">翡翠耳饰</a>
+                            <a href="#">翡翠手链</a>
+                            <a href="#">翡翠摆件/手把件/挂件</a>
+                            <a href="#">翡翠头饰/胸饰/脚饰</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 7F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>7F 珍珠</strong>
+                            <span>GENUINE PEARL</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">珍珠耳钉</a>
+                            <a href="#">珍珠项链</a>
+                            <a href="#">珍珠手链</a>
+                            <a href="#">珍珠毛衣链</a>
+                            <a href="#">珍珠饰品</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 8F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>8F 流行饰品</strong>
+                            <span>MODISH ORNAMEN</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">项链</a>
+                            <a href="#">吊坠</a>
+                            <a href="#">手链</a>
+                            <a href="#">手串</a>
+                            <a href="#">戒指</a>
+                            <a href="#">胸针</a>
+                            <a href="#">发饰</a>
+                            <a href="#">脚饰</a>
+                            <a href="#">耳饰</a>
+                            <a href="#">锁骨链</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 9F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>9F 天然木饰</strong>
+                            <span>NATURAL WOOD ACT THE ROLE OFING</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">小叶紫檀</a>
+                            <a href="#">沉木香</a>
+                            <a href="#">血龙木</a>
+                            <a href="#">黄花梨</a>
+                            <a href="#">酸枝</a>
+                            <a href="#">金丝楠木</a>
+                            <a href="#">天然水晶/半宝石</a>
+                            <a href="#">紫檀</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 10F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>10F 奇趣收藏</strong>
+                            <span>FABULOUS COLLECTION</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">工艺品</a>
+                            <a href="#">创意礼品</a>
+                            <a href="#">瓷器紫砂</a>
+                            <a href="#">字画收藏</a>
+                            <a href="#">把件/摆件</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- 11F -->
+                 <div class="onefloor">
+                    <div class="title">
+                        <div class="tit1">
+                            <strong>11F 眼镜手表 </strong>
+                            <span>WATCH & GLASSES</span>
+                        </div>
+                        <div class="directory">
+                            <a href="#">钟表</a>
+                            <a href="#">眼镜</a>
+                            <a href="#">太阳眼镜</a>
+                            <a href="#">近视眼镜</a>
+                            <a href="#">蛤蟆镜</a>
+                            <a href="#">复古镜框</a>
+                            <a href="#">老花镜</a>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="broGold">
+                        <div class="broGolds">
+                            <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-28-2.jpg?317" alt="">
+                            <div class="one"><img src="http://cdn.zhubaojie.com/mallcache/upload/shop/editor/web-2-23.jpg?378" alt=""></div>
+                        </div>
+                        <div class="broGoldss">
+                            <ul>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                                    <div class="price">
+                                        <span style="font-size: 14px;">￥</span>
+                                        <span style="font-size: 18px;">6366</span>
+                                        <span style="font-size: 12px;">00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                                <li>
+                                    <img src="http://cdn.zhubaojie.com/mallcache/upload/shop/store/goods/1405/1405_05345104898894365.jpg?x-oss-process=image/resize,m_fill,h_240,w_240" alt="">
+                                    <p>旧时光珠宝文玩 蜜蜡吊坠 祥瑞麒麟</p>
+                            <div class="price">
+                                <span style="font-size: 14px;">￥</span>
+                                <span style="font-size: 18px;">6366</span>
+                                <span style="font-size: 12px;">00</span>
+                            </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <!-- 3.页脚 -->
+        <div class="foot">
+
+        </div>
+        <!-- 4.右侧导航 -->
+        <div class="right-nav">
+            <div class="fr-bar">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
